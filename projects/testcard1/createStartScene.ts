@@ -59,21 +59,9 @@ import {
   
 export function createStartScene(engine: Engine) {
     let myscene: Scene = new Scene(engine) ;
-      function createBox(scene: Scene) {
-    let box = MeshBuilder.CreateBox("box",{size: 1}, scene);
-    box.position.y = 1;
-    return box;
-  }
+    createBox(myscene);
     createLight(myscene);
-     function createSphere(scene: Scene) {
-    let sphere = MeshBuilder.CreateSphere(
-      "sphere",
-      { diameter: 2, segments: 32 },
-      scene,
-    );
-    sphere.position.y = 3;
-    return sphere;
-  }
+    createSphere(myscene);
     createGround(myscene);
     createArcRotateCamera(myscene);
 

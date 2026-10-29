@@ -19,8 +19,8 @@ let verticalRangeY: number = 0.3;
 let boxPositionY: number = 4;
 let spherePositionY: number = 1.5;
 
-export default function createRunScene(runScene: SceneData) {
-  runScene.scene.onAfterRenderObservable.add(() => {
+export  function createRunScene(runScene: SceneData) {
+  runScene.myscene.onAfterRenderObservable.add(() => {
     // rotate box
     const axis: Vector3 = new Vector3(0, 0, 1).normalize();
     const quat: Quaternion = Quaternion.RotationAxis(
@@ -31,7 +31,7 @@ export default function createRunScene(runScene: SceneData) {
     boxAngle += boxSpeed;
     boxAngle %= 1;
 
-    // move light in ellipse  and cycle luma
+      // move light in ellipse  and cycle luma
     runScene.lightSpot.position = new Vector3(
       lightXpos + 8 * Math.sin(lightAngle * 2 * Math.PI),
       20,
@@ -41,7 +41,7 @@ export default function createRunScene(runScene: SceneData) {
     lightAngle += lightSpeed;
     lightAngle %= 1;
 
-    // vertical oscilation of meshes
+        // vertical oscilation of meshes
     runScene.box.position.y =
       boxPositionY + verticalRangeY * Math.sin(verticalAngle * 2 * Math.PI);
     runScene.sphere.position.y =

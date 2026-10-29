@@ -10,7 +10,7 @@ import {
 } from "@babylonjs/core";
 
 export interface SceneData {
-  scene: Scene;
+  myscene: Scene;
   box: Mesh;
   lightBulb: PointLight;
   lightDirectional?: DirectionalLight;
